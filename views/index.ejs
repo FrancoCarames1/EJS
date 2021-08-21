@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body>
+    <%- include('./partials/form'); %>
+    <script>
+        document.getElementById('formulario').onsubmit = () =>{
+            let title = document.getElementById('title').value;
+            let mainCharacter = document.getElementById('mainCharacter').value;
+            alert('Nuevo anime agregado: \n Título: ' + title + '\n Personaje Principal: ' + mainCharacter);
+        }
+    </script>
+</body>
+</html>
