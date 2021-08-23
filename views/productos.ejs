@@ -2,20 +2,30 @@
 <html lang="en">
 <head>
     <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Lista de animes:</h1>
-    <% mostrar.forEach(function(anime){ %>
-        <h4>Titulo: <%=anime.title%> </h4>
-        <p>Personaje principal: <%=anime.mainCharacter%> </p>
-        <p>Id: <%=anime.id%></p>
-    <% }); %>
-    <script>
-        document.getElementById('formulario').onsubmit = () =>{
-            let title = document.getElementById('title').value;
-            let mainCharacter = document.getElementById('mainCharacter').value;
-            alert('Nuevo anime agregado: \n Título: ' + title + '\n Personaje Principal: ' + mainCharacter);
-        }
-    </script>
+    <a href="/"><button>Agregar animes</button></a>
+    <% if (mostrar.length !== 0) { %>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Personaje principal</th>
+                <th>Url de imagen</th>
+            </tr>
+            <% mostrar.forEach(function(anime){ %>
+                <tr>
+                    <td><%=anime.id%></td>
+                    <td><%=anime.title%></td>
+                    <td><%=anime.mainCharacter%></td>
+                    <td><img src=<%=anime.imgUrl%> alt=<%=anime.title%>></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% }else{ %>
+        <h4>No se encontro productos</h4>
+    <% } %>
 </body>
 </html>

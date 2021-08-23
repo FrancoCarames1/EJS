@@ -4,12 +4,14 @@
     <%- include('./partials/head'); %>
 </head>
 <body>
+    <a href="/productos"><button>Ver animes</button></a>
     <%- include('./partials/form'); %>
     <script>
         document.getElementById('formulario').onsubmit = () =>{
             let title = document.getElementById('title').value;
             let mainCharacter = document.getElementById('mainCharacter').value;
-            alert('Nuevo anime agregado: \n Título: ' + title + '\n Personaje Principal: ' + mainCharacter);
+            let urlImg = document.getElementById('imgUrl').value;
+            alert('Nuevo anime agregado: \n Título: ' + title + '\n Personaje Principal: ' + mainCharacter + '\n Url de imagen: ' + urlImg);
         }
     </script>
 </body>
